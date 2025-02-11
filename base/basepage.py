@@ -1,7 +1,15 @@
+<<<<<<< zadacha_1
+=======
+from selenium.common import TimeoutException
+>>>>>>> main
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+<<<<<<< zadacha_1
+=======
+from selenium.webdriver.support import expected_conditions as ec
+>>>>>>> main
 
 
 class BasePage:
@@ -21,3 +29,13 @@ class BasePage:
 
     def get_current_url(self) -> str:
         return self.driver.current_url
+<<<<<<< zadacha_1
+=======
+
+    def is_element_present(self, by, value):
+        try:
+            WebDriverWait(self.driver, self.timeout).until(ec.presence_of_element_located((by, value)))
+            return True
+        except TimeoutException:
+            return False
+>>>>>>> main
