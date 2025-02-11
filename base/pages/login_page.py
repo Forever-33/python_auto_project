@@ -1,4 +1,7 @@
+<<<<<<< zadacha_1
+=======
 import allure
+>>>>>>> main
 from selenium.webdriver.common.by import By
 from base.basepage import BasePage
 
@@ -14,6 +17,25 @@ class LoginPage(BasePage):
         self.login_btn = (By.NAME, 'login-button')  #Локатор по Name для элемента кнопка Login
         self.page_url = 'https://www.saucedemo.com/'
 
+<<<<<<< zadacha_1
+    def input_login(self, login: str) -> None:
+        self.find_element(*self.login).send_keys(login)
+
+    def input_password(self, password: str) -> None:
+        self.find_element(*self.password).send_keys(password)
+
+    def login_button_click(self) -> None:
+        self.find_element(*self.login_btn).click()
+
+    def check_login_page(self) -> bool:
+        return self.get_current_url() == self.page_url
+
+    def get_error_message(self) -> str:
+        return self.find_element(*self.password_error).text
+
+    def get_error_background(self) -> str:
+        return self.find_element(*self.background_error).value_of_css_property('background-color')
+=======
     @allure.step(r"Найти элемент текстового поля для логина")
     def input_login(self, login: str) -> None:
         self.find_element(*self.login).send_keys(login)
@@ -45,3 +67,4 @@ class LoginPage(BasePage):
     @allure.step(r"Проверить текстовое поле пароля на значение")
     def get_password_value(self) -> str:
         return self.find_element(*self.password).get_attribute('value')
+>>>>>>> main

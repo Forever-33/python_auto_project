@@ -1,4 +1,7 @@
+<<<<<<< zadacha_1
+=======
 import allure
+>>>>>>> main
 from selenium.webdriver.common.by import By
 from base.basepage import BasePage
 
@@ -8,6 +11,11 @@ class InventoryPage(BasePage):
         super().__init__(driver, timeout=60)
 
         self.page_url = 'https://www.saucedemo.com/inventory.html'
+<<<<<<< zadacha_1
+
+    def check_inventory_page_open(self) -> bool:
+        return self.get_current_url() == self.page_url
+=======
         self.sauce_labs = (By.ID, 'add-to-cart-sauce-labs-backpack')
         self.cart_num = (By.CLASS_NAME, 'shopping_cart_badge')
         self.cart_button = (By.ID, 'shopping_cart_container')
@@ -34,3 +42,4 @@ class InventoryPage(BasePage):
         return self.find_element(*self.sauce_labs_backpack_price).text
 
 
+>>>>>>> main
